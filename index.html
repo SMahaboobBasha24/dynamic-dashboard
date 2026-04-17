@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.cards{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+width:180px;
+}
+
+.value{
+font-size:28px;
+margin-top:10px;
+}
+
+.label{
+color:#94a3b8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>📊 Live Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="label">Users</div>
+<div id="users" class="value">1000</div>
+</div>
+
+<div class="card">
+<div class="label">Sales</div>
+<div id="sales" class="value">500</div>
+</div>
+
+<div class="card">
+<div class="label">Revenue</div>
+<div id="revenue" class="value">20000</div>
+</div>
+
+</div>
+
+<script>
+
+let users = 1000
+let sales = 500
+let revenue = 20000
+
+setInterval(()=>{
+
+users += Math.floor(Math.random()*10)
+sales += Math.floor(Math.random()*5)
+revenue += Math.floor(Math.random()*500)
+
+document.getElementById("users").innerText = users
+document.getElementById("sales").innerText = sales
+document.getElementById("revenue").innerText = "₹" + revenue
+
+},2000)
+
+</script>
+
+</body>
+</html>
